@@ -41,6 +41,7 @@ class CentStoreDiscord {
             public: new Map(),
             private: new Map(),
         };
+        this.localIdentity = {};
 
         this.window = new BrowserWindow({
             width: 1250,
@@ -150,6 +151,8 @@ class CentStoreDiscord {
         this.sockets.message.bind(CONSTANTS.MESSAGE_PORT, ipAddress, () => {
             this.sockets.message.setBroadcast(true);
         });
+
+        this.localIdentity = { ipAddress, subnetMask, ifaceName, macAddress };
     }
 }
 new CentStoreDiscord();

@@ -4,8 +4,46 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cent Store Discord</title>
+        <link rel="stylesheet" href="./main.css" />
     </head>
-    <body>
+    <body class="dark-theme">
+        <nav class="top-nav" data-tabset="main" data-tab-control="true">
+            <div class="nav-button active" data-tab="tab-1">Main</div>
+            <div class="nav-button" data-tab="tab-2">Settings</div>
+        </nav>
+        <main class="main-content" data-tabset="main" data-tab-content="true">
+            <!-- Main Tab -->
+            <div class="main-tab active" data-tab="tab-1">
+                <div class="sidebar sidebar-left">
+                    <div class="interface-select-container"></div>
+                    <div
+                        class="channel-tab-controls"
+                        data-tab-set="channels"
+                        data-tab-control="true"
+                    >
+                        <div class="channel-tab-button active" data-tab="tab-1">
+                            Direct
+                        </div>
+                        <div class="channel-tab-button" data-tab="tab-1">
+                            Group
+                        </div>
+                    </div>
+                    <div class="channel-list-container">
+                        <div class="channel-list-header">
+                            <span class="channel-count">0 Channels</span>
+                            <button class="channel-add-button">+</button>
+                        </div>
+                        <div class="channel-list"></div>
+                    </div>
+                </div>
+                <main class="messaging-section"></main>
+                <div class="sidebar sidebar-right">
+                    <div class="online-list"></div>
+                </div>
+            </div>
+            <!-- Settings -->
+            <div class="main-tab" data-tab="tab-2"></div>
+        </main>
         <script src="../src/renderer.js"></script>
     </body>
 </html>
