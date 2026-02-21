@@ -1,0 +1,24 @@
+{
+    "name": "centstorediscord",
+    "version": "1.0.0",
+    "description": "1/100th there.",
+    "repository": {
+        "type": "git",
+        "url": "centstorediscord"
+    },
+    "license": "MIT",
+    "author": "TechnicalDifficulties",
+    "type": "commonjs",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "electron-builder",
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^40.4.1",
+        "electron-builder": "^26.8.1"
+    },
+    "dependencies": {
+        "sound-play": "^1.1.0"
+    }
+}
