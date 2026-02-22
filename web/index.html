@@ -7,33 +7,83 @@
         <link rel="stylesheet" href="./main.css" />
     </head>
     <body class="dark-theme">
-        <nav class="top-nav" data-tabset="main" data-tab-control="true">
-            <div class="nav-button active" data-tab="tab-1">Main</div>
-            <div class="nav-button" data-tab="tab-2">Settings</div>
+        <nav
+            class="top-nav tab-controls"
+            data-tabset="main"
+            data-tab-control="true"
+        >
+            <img class="icon" src="../assets/icon-no-bg.png" />
+            <div class="tab-control nav-button active" data-tab="tab-1">
+                Main
+            </div>
+            <div class="tab-control nav-button" data-tab="tab-2">Settings</div>
         </nav>
-        <main class="main-content" data-tabset="main" data-tab-content="true">
+        <main
+            class="main-content tab-container"
+            data-tabset="main"
+            data-tab-content="true"
+        >
             <!-- Main Tab -->
             <div class="main-tab active" data-tab="tab-1">
                 <div class="sidebar sidebar-left">
-                    <div class="interface-select-container"></div>
+                    <div class="interface-select-container">
+                        <label for="interface-select"
+                            >Interface<select id="interface-select"></select
+                        ></label>
+                    </div>
+
                     <div
-                        class="channel-tab-controls"
-                        data-tab-set="channels"
+                        class="channel-tab-controls tab-controls"
+                        data-tabset="channels"
                         data-tab-control="true"
                     >
-                        <div class="channel-tab-button active" data-tab="tab-1">
+                        <div
+                            class="channel-tab-button tab-control active"
+                            data-tab="tab-1"
+                        >
                             Direct
                         </div>
-                        <div class="channel-tab-button" data-tab="tab-1">
+                        <div
+                            class="channel-tab-button tab-control"
+                            data-tab="tab-1"
+                        >
                             Group
                         </div>
                     </div>
-                    <div class="channel-list-container">
-                        <div class="channel-list-header">
-                            <span class="channel-count">0 Channels</span>
-                            <button class="channel-add-button">+</button>
+
+                    <div
+                        class="channel-list-container tab-container"
+                        data-tabset="channels"
+                        data-tab-content="true"
+                    >
+                        <div class="channel-list-tab active" data-tab="tab-1">
+                            <div class="channel-list-header">
+                                <span class="channel-count">0 Channels</span>
+                                <button
+                                    class="channel-add-button"
+                                    data-access="private"
+                                >
+                                    +
+                                </button>
+                            </div>
+                            <div class="channel-list"></div>
                         </div>
-                        <div class="channel-list"></div>
+                        <div class="channel-list-tab" data-tab="tab-2">
+                            <div class="channel-list-header">
+                                <span class="channel-count">0 Channels</span>
+                                <button
+                                    class="channel-add-button"
+                                    data-access="public"
+                                >
+                                    +
+                                </button>
+                            </div>
+                            <div class="channel-list"></div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section-container">
+                        <div class="profile-section"></div>
                     </div>
                 </div>
                 <main class="messaging-section"></main>
