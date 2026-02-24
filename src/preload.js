@@ -44,7 +44,7 @@ contextBridge.exposeInMainWorld("bridge", {
             );
         },
         onList: (callback) => {
-            ipcRenderer.on("channels.get.all", (event, channels) => {
+            ipcRenderer.on("channels.update.all", (event, channels) => {
                 callback(channels);
             });
         },

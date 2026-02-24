@@ -10,7 +10,6 @@
         <nav
             class="top-nav tab-controls"
             data-tabset="main"
-            data-tab-control="true"
         >
             <img class="icon" src="../assets/icon-no-bg.png" />
             <div class="tab-control nav-button active" data-tab="tab-1">
@@ -21,21 +20,18 @@
         <main
             class="main-content tab-container"
             data-tabset="main"
-            data-tab-content="true"
         >
             <!-- Main Tab -->
             <div class="main-tab active" data-tab="tab-1">
                 <div class="sidebar sidebar-left">
                     <div class="interface-select-container">
-                        <label for="interface-select"
-                            >Interface<select id="interface-select"></select
-                        ></label>
+                        <label for="interface-select">Interface</label>
+                        <select id="interface-select"></select>
                     </div>
 
                     <div
                         class="channel-tab-controls tab-controls"
                         data-tabset="channels"
-                        data-tab-control="true"
                     >
                         <div
                             class="channel-tab-button tab-control active"
@@ -45,7 +41,7 @@
                         </div>
                         <div
                             class="channel-tab-button tab-control"
-                            data-tab="tab-1"
+                            data-tab="tab-2"
                         >
                             Group
                         </div>
@@ -54,7 +50,6 @@
                     <div
                         class="channel-list-container tab-container"
                         data-tabset="channels"
-                        data-tab-content="true"
                     >
                         <div class="channel-list-tab active" data-tab="tab-1">
                             <div class="channel-list-header">
@@ -83,10 +78,38 @@
                     </div>
 
                     <div class="profile-section-container">
-                        <div class="profile-section"></div>
+                        <div class="profile-section-head">
+                            <span class="profile-section-status-icon offline"></span>
+                            <div class="profile-section-user-info">
+                                <div class="profile-section-ip">[No Interface Attached]</div>
+                                <div class="profile-section-name">Anonymous</div>
+                            </div>
+                        </div>
+                        <div class="profile-section-body">
+                            <div class="profile-setting">
+                                <label for="profile-setting-name">Username</label>
+                                <input class="profile-setting-input" type="text" id="profile-setting-name" aria-placeholder="Anonymous">
+                            </div>
+                            <div class="profile-setting">
+                                <label for="profile-setting-status">Status</label>
+                                <select id="profile-setting-status" value="online">
+                                    <option value="online">Online</option>
+                                    <option value="idle">Idle</option>
+                                    <option value="do-not-disturb">Do Not Disturb</option>
+                                    <option value="actually-do-not-disturb">Actually Do Not Disturb</option>
+                                    <option value="invisible">Invisible</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <main class="messaging-section"></main>
+                <main class="messaging-section">
+                    <div id="messages"></div>
+                    <div class="message-input-container">
+                        <input type="text" id="message-input" placeholder="Type a message..." class="interface-locked" disabled>
+                        <button id="message-send">Send</button>
+                    </div>
+                </main>
                 <div class="sidebar sidebar-right">
                     <div class="online-list"></div>
                 </div>
