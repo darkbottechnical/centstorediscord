@@ -8,11 +8,44 @@
     },
     "license": "MIT",
     "author": "TechnicalDifficulties",
-    "type": "commonjs",
+    "type": "module",
     "main": "src/index.js",
     "scripts": {
         "build": "electron-builder",
         "start": "electron ."
+    },
+    "build": {
+        "appId": "com.technicaldifficulties.centstorediscord",
+        "productName": "CentStoreDiscord",
+        "files": [
+            "src/**/*",
+            "web/index.html",
+            "assets/web/**",
+            "package.json"
+        ],
+        "extraResources": [
+            {
+                "from": "assets/back/",
+                "to": "back",
+                "filter": [
+                    "**/*"
+                ]
+            }
+        ],
+        "win": {
+            "icon": "assets/back/img/icon.png",
+            "target": "nsis",
+            "artifactName": "${productName}-Setup-${version}.${ext}"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        },
+        "mac": {
+            "icon": "assets/back/img/icon.png",
+            "target": "dmg",
+            "category": "public.app-category.social-networking"
+        }
     },
     "devDependencies": {
         "electron": "^40.4.1",

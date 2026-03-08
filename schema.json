@@ -1,0 +1,21 @@
+[
+    {
+        "access": "public",
+        "data": {
+            "from": {
+                "ip": "ip",
+                "mac": "mac",
+                "username": "username"
+            },
+            "to": {
+                "channel": "channel"
+            },
+            "message": {
+                "type": "type",
+                "content": "content",
+                "timestamp": "timestamp"
+            }
+        }
+    },
+    {}
+]

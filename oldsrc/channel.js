@@ -8,6 +8,11 @@ class PrivateChannel extends Channel {
     constructor(remote) {
         super();
     }
+
+    pushMessage(message) {
+        this.messages.push(message);
+    }
+    setRemoteInfo(rinfo) {}
 }
 
 class PublicChannel extends Channel {
@@ -17,6 +22,11 @@ class PublicChannel extends Channel {
         this.number = number;
     }
 
+    pushMessage(message) {
+        this.messages.push(message);
+    }
+
+    addActiveUser(user) {}
     removeActiveUser(mac) {}
 }
 

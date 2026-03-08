@@ -4,23 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cent Store Discord</title>
-        <link rel="stylesheet" href="./main.css" />
+        <link rel="stylesheet" href="../assets/web/css/main.css" />
     </head>
     <body class="dark-theme">
-        <nav
-            class="top-nav tab-controls"
-            data-tabset="main"
-        >
-            <img class="icon" src="../assets/icon-no-bg.png" />
-            <div class="tab-control nav-button active" data-tab="tab-1">
-                Main
-            </div>
+        <nav class="top-nav tab-controls" data-tabset="main">
+            <img class="icon" src="../assets/web/img/icon-no-bg.png" />
+            <div class="tab-control nav-button active" data-tab="tab-1">Main</div>
             <div class="tab-control nav-button" data-tab="tab-2">Settings</div>
         </nav>
-        <main
-            class="main-content tab-container"
-            data-tabset="main"
-        >
+        <main class="main-content tab-container" data-tabset="main">
             <!-- Main Tab -->
             <div class="main-tab active" data-tab="tab-1">
                 <div class="sidebar sidebar-left">
@@ -29,49 +21,23 @@
                         <select id="interface-select"></select>
                     </div>
 
-                    <div
-                        class="channel-tab-controls tab-controls"
-                        data-tabset="channels"
-                    >
-                        <div
-                            class="channel-tab-button tab-control active"
-                            data-tab="tab-1"
-                        >
-                            Direct
-                        </div>
-                        <div
-                            class="channel-tab-button tab-control"
-                            data-tab="tab-2"
-                        >
-                            Group
-                        </div>
+                    <div class="channel-tab-controls tab-controls" data-tabset="channels">
+                        <div class="channel-tab-button tab-control active" data-tab="tab-1">Direct</div>
+                        <div class="channel-tab-button tab-control" data-tab="tab-2">Group</div>
                     </div>
 
-                    <div
-                        class="channel-list-container tab-container"
-                        data-tabset="channels"
-                    >
+                    <div class="channel-list-container tab-container" data-tabset="channels">
                         <div class="channel-list-tab active" data-tab="tab-1">
                             <div class="channel-list-header">
                                 <span class="channel-count">0 Channels</span>
-                                <button
-                                    class="channel-add-button"
-                                    data-access="private"
-                                >
-                                    +
-                                </button>
+                                <button class="channel-add-button" data-access="private">+</button>
                             </div>
                             <div class="channel-list"></div>
                         </div>
                         <div class="channel-list-tab" data-tab="tab-2">
                             <div class="channel-list-header">
                                 <span class="channel-count">0 Channels</span>
-                                <button
-                                    class="channel-add-button"
-                                    data-access="public"
-                                >
-                                    +
-                                </button>
+                                <button class="channel-add-button" data-access="public">+</button>
                             </div>
                             <div class="channel-list"></div>
                         </div>
@@ -88,7 +54,12 @@
                         <div class="profile-section-body">
                             <div class="profile-setting">
                                 <label for="profile-setting-name">Username</label>
-                                <input class="profile-setting-input" type="text" id="profile-setting-name" aria-placeholder="Anonymous">
+                                <input
+                                    class="profile-setting-input"
+                                    type="text"
+                                    id="profile-setting-name"
+                                    aria-placeholder="Anonymous"
+                                />
                             </div>
                             <div class="profile-setting">
                                 <label for="profile-setting-status">Status</label>
@@ -106,7 +77,13 @@
                 <main class="messaging-section">
                     <div id="messages"></div>
                     <div class="message-input-container">
-                        <input type="text" id="message-input" placeholder="Type a message..." class="interface-locked" disabled>
+                        <input
+                            type="text"
+                            id="message-input"
+                            placeholder="Type a message..."
+                            class="interface-locked"
+                            disabled
+                        />
                         <button id="message-send">Send</button>
                     </div>
                 </main>
@@ -117,6 +94,6 @@
             <!-- Settings -->
             <div class="main-tab" data-tab="tab-2"></div>
         </main>
-        <script src="../src/renderer.js"></script>
+        <script src="../src/ui/ui-main.js"></script>
     </body>
 </html>
