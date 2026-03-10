@@ -28,4 +28,4 @@ function intToIp(i) {
     return [(i >>> 24) & 0xff, (i >>> 16) & 0xff, (i >>> 8) & 0xff, i & 0xff].join(".");
 }
 
-export { listIPv4Interfaces, ipToInt, intToIp };
+export default { listIPv4Interfaces, ipToInt, intToIp };
