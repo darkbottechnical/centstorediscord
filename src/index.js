@@ -3,6 +3,12 @@ import { app, BrowserWindow, Notification, ipcMain } from "electron";
 import { SocketManager } from "./net/socket-manager.js";
 import assetManager from "./ui/asset-manager.js";
 import { registerIpc } from "./ipc/if-main.js";
+import {
+    ChannelManager,
+    Channel,
+    PublicChannel,
+    PrivateChannel,
+} from "./net/channel.js";
 import logger from "./util/log.js";
 
 export class CentStoreDiscord {
@@ -20,13 +26,21 @@ export class CentStoreDiscord {
         icon: assetManager.getAssetPath("img", "icon.png"),
     };
 
+    /**
+     * Main program class to hold everything together.
+     * **WARNING: Starts the app when instantiated.**
+     */
     constructor() {
         this.window = null;
         this.socketManager = new SocketManager();
+        this.channelManager = new ChannelManager();
 
         this.initApp();
     }
 
+    /**
+     * Initialise the desktop app and relevant listeners.
+     */
     initApp() {
         logger.info("Initialising desktop app.");
         app.setAppUserModelId(CentStoreDiscord.appUserModelId);
@@ -44,6 +58,9 @@ export class CentStoreDiscord {
         });
     }
 
+    /**
+     * Initialise electron BrowserWindow and window. Runs once the app is initialised.
+     */
     launch() {
         logger.info("Opening window.");
         this.window = new BrowserWindow(CentStoreDiscord.browserConfig);
@@ -51,6 +68,9 @@ export class CentStoreDiscord {
         this.window.setMenuBarVisibility(false);
     }
 
+    /**
+     * Function that runs when the app is closed.
+     */
     cleanup() {
         app.quit();
         logger.shutdown();

@@ -3,11 +3,19 @@ import { existsSync, mkdirSync, createWriteStream } from "fs";
 import { app } from "electron";
 
 class Logger {
+    /**
+     * Logger class
+     */
     constructor() {
-        const baseDir = app.isPackaged ? app.getPath("userData") : process.cwd();
+        const baseDir = app.isPackaged
+            ? app.getPath("userData")
+            : process.cwd();
         this.logDir = path.join(baseDir, "logs");
 
-        this.logFile = path.join(this.logDir, `session-${new Date().toISOString().split("T")[0]}.log`);
+        this.logFile = path.join(
+            this.logDir,
+            `session-${new Date().toISOString().split("T")[0]}.log`,
+        );
 
         if (!existsSync(this.logDir)) {
             mkdirSync(this.logDir, { recursive: true });
