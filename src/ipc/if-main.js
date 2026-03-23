@@ -1,7 +1,12 @@
 import { ipcMain } from "electron";
 import netutils from "../net/ip-utils.js";
 import logger from "../util/log.js";
+import { CentStoreDiscord } from "../index.js";
 
+/**
+ * Helper to be called in the main class to register ipcMain listeners and stuff.
+ * @param {CentStoreDiscord} ctx
+ */
 export function registerIpc(ctx) {
     const { socketManager } = ctx;
 
@@ -15,10 +20,10 @@ export function registerIpc(ctx) {
         socketManager.setupSockets(
             ifaceInfo,
             (controlBuffer) => {
-                ctx.window.handleControl(controlBuffer);
+                ctx.channelManager.handleControl(controlBuffer);
             },
             (messageBuffer) => {
-                ctx.window.handleMessage(messageBuffer);
+                ctx.channelManager.handleMessage(messageBuffer);
             },
         );
     });

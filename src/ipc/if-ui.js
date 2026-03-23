@@ -1,5 +1,8 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
+/**
+ * Exposing ui side API
+ */
 contextBridge.exposeInMainWorld("bridge", {
     interfaces: {
         // renderer's avialable calls
@@ -33,9 +36,12 @@ contextBridge.exposeInMainWorld("bridge", {
 
         // renderer's listeners
         onUpdateChannel: (callback) => {
-            ipcRenderer.on("channels.update.one", (event, type, identifier, updated) => {
-                callback(type, identifier, updated);
-            });
+            ipcRenderer.on(
+                "channels.update.one",
+                (event, type, identifier, updated) => {
+                    callback(type, identifier, updated);
+                },
+            );
         },
         onList: (callback) => {
             ipcRenderer.on("channels.update.all", (event, channels) => {
