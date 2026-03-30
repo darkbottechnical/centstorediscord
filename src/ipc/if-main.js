@@ -27,4 +27,8 @@ export function registerIpc(ctx) {
             },
         );
     });
+
+    ipcMain.on("userinfo.set", (event, newInfo) => {
+        logger.info(`Updating user info to ${newInfo}`);
+    });
 }

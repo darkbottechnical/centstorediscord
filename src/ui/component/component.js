@@ -1,4 +1,4 @@
-class Component {
+export class Component {
     constructor(selector) {
         this.root = document.querySelector(selector);
         if (!this.root) throw new Error(`Selector ${selector} has no matches.`);
@@ -23,11 +23,35 @@ class Component {
         });
     }
 
+    _log(level, message) {
+        console.log(`[${new Date()}] [${level}] ${message}`);
+    }
+
+    info(message) {
+        this._log("INFO", message);
+    }
+
+    warn(message) {
+        this._log("WARN", message);
+    }
+
+    error(message) {
+        this._log("ERROR", message);
+    }
+
     send(channel, data) {
         if (window.bridge) {
             window.bridge.send(channel, data);
         } else {
-            console.warn("Electron bridge API not found.");
+            this.warn("Electron bridge API not found.");
+        }
+    }
+
+    async invoke(channel) {
+        if (window.bridge) {
+            return await window.bridge.invoke(channel);
+        } else {
+            this.warn("Electron bridge API not found.");
         }
     }
 
@@ -35,7 +59,7 @@ class Component {
         if (window.bridge) {
             window.bridge.on(channel, callback);
         } else {
-            console.warn("Electron bridge API not found.");
+            this.warn("Electron bridge API not found.");
         }
     }
 }

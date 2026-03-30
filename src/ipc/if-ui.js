@@ -4,6 +4,14 @@ const { contextBridge, ipcRenderer } = require("electron");
  * Exposing ui side API
  */
 contextBridge.exposeInMainWorld("bridge", {
+    appData: {
+        get: () => {
+            ipcRenderer.invoke("appdata.get");
+        },
+        set: (key, value) => {
+            ipcRenderer.send("appdata.set", { key, value });
+        },
+    },
     interfaces: {
         // renderer's avialable calls
         select: (interface) => {

@@ -10,6 +10,10 @@ class ChannelManager {
         this.privateChannels = new Map();
 
         this.listeners = new Map();
+        this.userInfo = {
+            name: "Anonymous",
+            status: "offline",
+        };
     }
 
     /**

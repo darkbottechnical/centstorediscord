@@ -9,7 +9,9 @@
     <body class="dark-theme">
         <nav class="top-nav tab-controls" data-tabset="main">
             <img class="icon" src="../assets/web/img/icon-no-bg.png" />
-            <div class="tab-control nav-button active" data-tab="tab-1">Main</div>
+            <div class="tab-control nav-button active" data-tab="tab-1">
+                Main
+            </div>
             <div class="tab-control nav-button" data-tab="tab-2">Settings</div>
         </nav>
         <main class="main-content tab-container" data-tabset="main">
@@ -21,53 +23,109 @@
                         <select id="interface-select"></select>
                     </div>
 
-                    <div class="channel-tab-controls tab-controls" data-tabset="channels">
-                        <div class="channel-tab-button tab-control active" data-tab="tab-1">Direct</div>
-                        <div class="channel-tab-button tab-control" data-tab="tab-2">Group</div>
+                    <div
+                        class="channel-tab-controls tab-controls"
+                        data-tabset="channels"
+                    >
+                        <div
+                            class="channel-tab-button tab-control active"
+                            data-tab="tab-1"
+                        >
+                            Direct
+                        </div>
+                        <div
+                            class="channel-tab-button tab-control"
+                            data-tab="tab-2"
+                        >
+                            Group
+                        </div>
                     </div>
 
-                    <div class="channel-list-container tab-container" data-tabset="channels">
+                    <div
+                        class="channel-list-container tab-container"
+                        data-tabset="channels"
+                    >
                         <div class="channel-list-tab active" data-tab="tab-1">
                             <div class="channel-list-header">
                                 <span class="channel-count">0 Channels</span>
-                                <button class="channel-add-button" data-access="private">+</button>
+                                <button
+                                    class="channel-add-button"
+                                    data-access="private"
+                                >
+                                    +
+                                </button>
                             </div>
                             <div class="channel-list"></div>
                         </div>
                         <div class="channel-list-tab" data-tab="tab-2">
                             <div class="channel-list-header">
                                 <span class="channel-count">0 Channels</span>
-                                <button class="channel-add-button" data-access="public">+</button>
+                                <button
+                                    class="channel-add-button"
+                                    data-access="public"
+                                >
+                                    +
+                                </button>
                             </div>
                             <div class="channel-list"></div>
                         </div>
                     </div>
 
                     <div class="profile-section-container">
-                        <div class="profile-section-head">
-                            <span class="profile-section-status-icon offline"></span>
+                        <div
+                            class="profile-section-head"
+                            data-elref="profile-head"
+                        >
+                            <span
+                                class="profile-section-status-icon offline"
+                                data-elref="profile-section-status-icon"
+                            ></span>
                             <div class="profile-section-user-info">
-                                <div class="profile-section-ip">[No Interface Attached]</div>
-                                <div class="profile-section-name">Anonymous</div>
+                                <div
+                                    class="profile-section-ip"
+                                    data-elref="profile-section-ip"
+                                >
+                                    [No Interface Attached]
+                                </div>
+                                <div
+                                    class="profile-section-name"
+                                    data-elref="profile-section-name"
+                                >
+                                    Anonymous
+                                </div>
                             </div>
                         </div>
-                        <div class="profile-section-body">
+                        <div
+                            class="profile-section-body"
+                            data-elref="profile-body"
+                        >
                             <div class="profile-setting">
-                                <label for="profile-setting-name">Username</label>
+                                <label for="profile-setting-name"
+                                    >Username</label
+                                >
                                 <input
                                     class="profile-setting-input"
                                     type="text"
-                                    id="profile-setting-name"
+                                    data-elref="profile-setting-name"
                                     aria-placeholder="Anonymous"
                                 />
                             </div>
                             <div class="profile-setting">
-                                <label for="profile-setting-status">Status</label>
-                                <select id="profile-setting-status" value="online">
+                                <label for="profile-setting-status"
+                                    >Status</label
+                                >
+                                <select
+                                    data-elref="profile-setting-status"
+                                    value="online"
+                                >
                                     <option value="online">Online</option>
                                     <option value="idle">Idle</option>
-                                    <option value="do-not-disturb">Do Not Disturb</option>
-                                    <option value="actually-do-not-disturb">Actually Do Not Disturb</option>
+                                    <option value="do-not-disturb">
+                                        Do Not Disturb
+                                    </option>
+                                    <option value="actually-do-not-disturb">
+                                        Actually Do Not Disturb
+                                    </option>
                                     <option value="invisible">Invisible</option>
                                 </select>
                             </div>
